@@ -1,0 +1,71 @@
+.search_container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr;
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "sidebar main main main"
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: aqua;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  flex-direction: row-reverse;
+}
+
+.like {
+  padding: 6px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  grid-area: main;
+}
+
+@media only screen and (max-width: 550px) {
+  .search_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.4fr 1fr;
+    grid-template-areas:
+      "navbar"
+      "sidebar"
+      "main"
+  }
+}
+
+.btn {
+  padding: 6px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.active {
+  background-color: #ef9a9a;
+}
+
+.btn-link {
+  /* Не знаю с какой целью добавляли,не стал удалять. */
+}

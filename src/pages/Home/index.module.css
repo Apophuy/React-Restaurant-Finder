@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .main {
   /* The image used */
   background-image: url(../../assets/background.jpg);
@@ -42,8 +38,8 @@ label {
 }
 
 input {
-  margin: 10px auto;
-  width: 50%;
+  /* margin: 10px auto; */
+  /* width: 50%; */
   border: 3px solid green;
   padding: 10px
 }

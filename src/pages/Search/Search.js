@@ -1,26 +1,26 @@
-import React, { Component } from "react";
-import Navbar from "../../components/NavbarSearch/Navbar";
-import { getRestaurants } from "../../api/zomato";
-import "./index.css";
-import RestaurantCard from "../../components/RestaurantCard/RestaurantCard";
+import React, { Component } from 'react';
+import Navbar from '../../components/NavbarSearch/Navbar';
+import { getRestaurants } from '../../api/zomato';
+import styles from './index.module.css';
+import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 
-const PREFIX = "search";
+const PREFIX = 'search';
 
 class Search extends Component {
   state = {
-    cuisine: "",
-    operation: "Search",
+    cuisine: '',
+    operation: 'Search',
     offset: 0,
     position: undefined,
     restaurants: [],
-    sortBy: "rating",
-    order: "desc",
+    sortBy: 'rating',
+    order: 'desc',
     favourites: [],
     isLoading: false,
   };
 
   componentDidMount() {
-    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    const favourites = JSON.parse(localStorage.getItem('favourites')) || [];
     this.setState({ favourites });
   }
 
@@ -32,25 +32,21 @@ class Search extends Component {
 
   search = (event) => {
     this.setState({
-      operation: "Fetching location..",
+      operation: 'Fetching location..',
       isLoading: true,
     });
 
     navigator.geolocation.getCurrentPosition(async (position) => {
       this.setState({
-        operation: "Fetching restaurants...",
+        operation: 'Fetching restaurants...',
         position: position,
       });
 
-      const data = await getRestaurants(
-        position,
-        this.state.cuisine,
-        this.state.offset
-      );
+      const data = await getRestaurants(position, this.state.cuisine, this.state.offset);
 
       this.setState({
         restaurants: data,
-        operation: "Search",
+        operation: 'Search',
         isLoading: false,
       });
     });
@@ -147,70 +143,68 @@ class Search extends Component {
   handleClick = (isFavourite, restaurant) => {
     let favourites;
     if (isFavourite) {
-      favourites = this.state.favourites.filter(
-        (favourite) => favourite.id !== restaurant.id
-      );
+      favourites = this.state.favourites.filter((favourite) => favourite.id !== restaurant.id);
     } else {
       favourites = this.state.favourites.concat(restaurant);
     }
     this.setState({ favourites });
-    localStorage.setItem("favourites", JSON.stringify(favourites));
+    localStorage.setItem('favourites', JSON.stringify(favourites));
   };
 
   render() {
     return (
-      <div className={`${PREFIX}_container`}>
-        <div className="navbar">
-          {" "}
+      <div className={styles[`${PREFIX}_container`]}>
+        <div className={styles.navbar}>
+          {' '}
           <Navbar
             onChange={this.onChange}
             value={this.state.cuisine}
             search={this.search}
             operation={this.state.operation}
-          ></Navbar>{" "}
+          ></Navbar>{' '}
         </div>
-        <div className="sidebar">
+        <div className={styles.sidebar}>
           <button
-            onClick={() => this.handleSort("rating", "asc")}
+            onClick={() => this.handleSort('rating', 'asc')}
             className={
-              this.state.sort === "ratings"
-                ? "active btn btn-link"
-                : "btn btn-link"
+              this.state.sort === 'ratings'
+                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
+                : `${styles.btn} ${styles['btn-link']}`
             }
-            type="button"
+            type='button'
           >
             Ratings Asc
           </button>
           <button
-            onClick={() => this.handleSort("rating", "desc")}
+            onClick={() => this.handleSort('rating', 'desc')}
             className={
-              this.state.sort === "ratings"
-                ? "active btn btn-link"
-                : "btn btn-link"
+              this.state.sort === 'ratings'
+                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
+                : `${styles.btn} ${styles['btn-link']}`
             }
-            type="button"
+            type='button'
           >
             Ratings Desc
           </button>
           <button
-            onClick={() => this.handleSort("cost", "asc")}
+            onClick={() => this.handleSort('cost', 'asc')}
             className={
-              this.state.sort === "ratings"
-                ? "active btn btn-link"
-                : "btn btn-link"
+              this.state.sort === 'ratings'
+                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
+                : `${styles.btn} ${styles['btn-link']}`
             }
-            type="button"
+            type='button'
           >
             Average cost for two Asc
           </button>
           <button
-            onClick={() => this.handleSort("cost", "desc")}
+            onClick={() => this.handleSort('cost', 'desc')}
             className={
-              this.state.sort === "ratings"
-                ? "active btn btn-link"
-                : "btn btn-link"
+              this.state.sort === 'ratings'
+                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
+                : `${styles.btn} ${styles['btn-link']}`
             }
-            type="button"
+            type='button'
           >
             Average cost for two Desc
           </button>
@@ -220,24 +214,24 @@ class Search extends Component {
           {this.state.restaurants.map(({ restaurant }, index) => {
             //restaurant.restaurant = { restaurant } destrukturalizace
             const isFavourite =
-              this.state.favourites
-                .map(({ id }) => id)
-                .indexOf(restaurant.id) !== -1;
+              this.state.favourites.map(({ id }) => id).indexOf(restaurant.id) !== -1;
 
             return (
-              <div key={index}>
+              <div key={index} className={styles.container}>
                 <button
                   data-id={restaurant}
                   onClick={() => this.handleClick(isFavourite, restaurant)}
-                  className="like"
+                  className={styles.like}
                 >
-                  {isFavourite ? "Remove" : "Add"}
+                  {isFavourite ? 'Remove' : 'Add'}
                 </button>
                 <RestaurantCard restaurant={restaurant} />
               </div>
             );
           })}
-          <button onClick={this.handleShowMore.bind(this)}>Show more</button>
+          <button onClick={this.handleShowMore.bind(this)} className={styles.btn}>
+            Show more
+          </button>
         </main>
       </div>
     );

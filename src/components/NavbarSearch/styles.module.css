@@ -1,0 +1,91 @@
+.navbar {
+  width: 100%;
+  /* margin: 0 auto; */
+  background-color: bisque;
+}
+
+.nav-header {
+  padding: 5rem 1rem 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.search-button {
+  /* float: right; */
+  padding: 6px;
+  /* margin-top: 8px; */
+  /* margin-right: 16px; */
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: bisque;
+  border: 1px solid rgb(82, 82, 82);
+  border-radius: 3px;
+}
+
+.search-input {
+  padding: 11px;
+  /* margin-top: 8px; */
+  font-size: 17px;
+  width: 500px;
+  margin-right: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style: none;
+
+}
+
+a {
+  padding: 1rem 0;
+  margin: 0 3rem;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+a:last-child {
+  margin-right: 0;
+}
+
+a::before,
+a::after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: crimson;
+  left: 0;
+  transform: scaleX(0);
+  transition: all .5s
+}
+
+a::before {
+  top: 0;
+  transform-origin: left;
+}
+
+a::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+a:hover::before,
+a:hover::after {
+  transform: scaleX(1);
+}

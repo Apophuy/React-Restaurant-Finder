@@ -1,0 +1,33 @@
+.list-item {
+  padding: 0.5em;
+}
+
+.name {
+  position: relative;
+  margin-left: 10px;
+}
+
+.name::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* background-color: #5562eb; */
+  border-radius: 50%;
+  border: 1px solid #5562eb;
+  left: -25px;
+  top: -5px;
+}
+
+.name::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  border: 1px solid #5562eb;
+  border-top: none;
+  border-right: none;
+  transform: rotateZ(-45deg);
+  left: -21px;
+  top: -1px;
+}
