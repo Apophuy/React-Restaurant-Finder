@@ -1,0 +1,33 @@
+.search_container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas:  
+        "navbar navbar navbar navbar"
+        "sidebar main main main"
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.sidebar {
+    grid-area: sidebar; 
+    background-color: aqua;
+}
+
+main {
+    grid-area: main; 
+}
+
+@media only screen and (max-width: 550px) {
+    .search_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.4fr 1fr;
+        grid-template-areas: 
+        "navbar"
+        "sidebar"
+        "main"
+    }
+}
