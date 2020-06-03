@@ -12,7 +12,7 @@ class Home extends Component {
         </div>
         <div className={styles.title}>
           <label htmlFor='search'> Don't know where to eat healthy? </label>
-          <input type='text' id='search' />
+          <input className={styles.input} type='text' id='search' />
         </div>
       </div>
     );

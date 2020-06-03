@@ -33,53 +33,68 @@ const RestaurantPage = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles['res-data']}>
-        <img
-          src='https://b.zmtcdn.com/data/res_imagery/16506533_RESTAURANT_d6d0bdeed6dd655468b2fe6130b0db08.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
-          alt='...'
-          className={styles['featured-image']}
-        />
-        <div className={styles['res-info']}>
-          <h3 className={styles['restaurant-name']}>{restaurant_name}</h3>
+      <nav className={styles['nav-header']}>
+        <button className={styles['home-button']}>Home</button>
+        <ul className={styles.list}>
+          <li>
+            <a href='#'>Home</a>{' '}
+          </li>
+          <li>
+            <a href='#'>Favourites</a>{' '}
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.wrapper}>
+        <div className={styles['res-data']}>
+          <img
+            src='https://b.zmtcdn.com/data/res_imagery/16506533_RESTAURANT_d6d0bdeed6dd655468b2fe6130b0db08.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+            alt='...'
+            className={styles['featured-image']}
+          />
+          <div className={styles['res-info']}>
+            <h3 className={styles['restaurant-name']}>{restaurant_name}</h3>
 
-          <span className={`${styles}.${ratingsColor(aggregate_rating)}`}>{aggregate_rating}</span>
-          <span>{rating_text}</span>
-          <span>{currency}</span>
-          <span> ({votes} votes)</span>
-        </div>
-        <div className={styles['res-info']}>
-          <p>
-            <strong>Cuisines: </strong>
-            {cuisines}
-          </p>
-          <p>
-            <strong>Cost for two: </strong> {currency}
-            {average_cost_for_two}
-          </p>
-        </div>
+            <span className={`${styles}.${ratingsColor(aggregate_rating)}`}>
+              {aggregate_rating}
+            </span>
+            <span>{rating_text}</span>
+            <span>{currency}</span>
+            <span> ({votes} votes)</span>
+          </div>
+          <div className={styles['res-info']}>
+            <p>
+              <strong>Cuisines: </strong>
+              {cuisines}
+            </p>
+            <p>
+              <strong>Cost for two: </strong> {currency}
+              {average_cost_for_two}
+            </p>
+          </div>
 
-        <div className={styles['res-info']}>
-          <p>{city}</p>
-          <p>
-            <strong>Address:</strong>
-          </p>
-          <p>{address}</p>
-          <p>{locality}</p>
+          <div className={styles['res-info']}>
+            <p>{city}</p>
+            <p>
+              <strong>Address:</strong>
+            </p>
+            <p>{address}</p>
+            <p>{locality}</p>
+          </div>
+          <div className={styles['res-info']}>
+            <span>{establishment}</span>
+            <span>{phone_numbers}</span>
+            <span>{timings}</span>
+          </div>
+          <div className={styles['res-info']}>
+            <ul className={styles['highlights-list']}>
+              {highlights.map((item) => (
+                <Highlights name={item} />
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className={styles['res-info']}>
-          <span>{establishment}</span>
-          <span>{phone_numbers}</span>
-          <span>{timings}</span>
-        </div>
-        <div className={styles['res-info']}>
-          <ul className={styles['highlights-list']}>
-            {highlights.map((item) => (
-              <Highlights name={item} />
-            ))}
-          </ul>
-        </div>
+        <div className={styles['map-container']}>Карта</div>
       </div>
-      <div className={styles['map-container']}>Карта</div>
     </div>
   );
 };

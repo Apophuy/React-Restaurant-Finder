@@ -6,9 +6,13 @@
 .link {
   text-decoration: none;
   color: black;
+  padding: 1rem 0;
+  margin: 0 3rem;
+  position: relative;
+  letter-spacing: 2px;
 }
 
-nav {
+.nav {
   padding-top: 5rem;
   display: flex;
   justify-content: space-between;
@@ -17,31 +21,24 @@ nav {
   font-size: 1.6rem;
 }
 
-nav ul {
+.list {
   width: 100%;
   justify-content: flex-end;
   display: flex;
   padding-right: 10%
 }
 
-nav ul li {
+.list-item {
   list-style: none;
 
 }
 
-nav ul li a {
-  padding: 1rem 0;
-  margin: 0 3rem;
-  position: relative;
-  letter-spacing: 2px;
-}
-
-nav ul li a:last-child {
+.link:last-child {
   margin-right: 0;
 }
 
-nav ul li a::before,
-nav ul li a::after {
+.link::before,
+.link::after {
   content: ' ';
   position: absolute;
   width: 100%;
@@ -52,17 +49,17 @@ nav ul li a::after {
   transition: all .5s
 }
 
-nav ul li a::before {
+.link::before {
   top: 0;
   transform-origin: left;
 }
 
-nav ul li a::after {
+.link::after {
   bottom: 0;
   transform-origin: right;
 }
 
-nav ul li a:hover::before,
-nav ul li a:hover::after {
+.link:hover::before,
+.link:hover::after {
   transform: scaleX(1);
 }

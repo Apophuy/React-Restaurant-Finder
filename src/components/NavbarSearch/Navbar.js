@@ -9,18 +9,21 @@ class Navbar extends Component {
     return (
       <div className={styles.navbar}>
         <nav className={styles['nav-header']}>
-          <input
-            type='text'
-            value={this.props.value}
-            onChange={this.props.onChange}
-            placeholder='Search..'
-            className={styles['search-input']}
-          />
-          <button className={styles['search-button']} type='submit' onClick={this.props.search}>
-            {' '}
-            {this.props.operation}{' '}
-          </button>
-          <ul>
+          <div className={styles['button-wrapper']}>
+            <button className={styles['home-button']}>Home</button>
+            <input
+              type='text'
+              value={this.props.value}
+              onChange={this.props.onChange}
+              placeholder='Search..'
+              className={styles['search-input']}
+            />
+            <button className={styles['search-button']} type='submit' onClick={this.props.search}>
+              {' '}
+              {this.props.operation}{' '}
+            </button>
+          </div>
+          <ul className={styles.list}>
             <li>
               <a href='#'>Home</a>{' '}
             </li>

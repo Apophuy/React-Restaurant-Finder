@@ -6,9 +6,9 @@ class Navbar extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <nav>
-          <ul>
-            <li>
+        <nav className={styles.nav}>
+          <ul className={styles.list}>
+            <li className={styles['list-item']}>
               <a className={styles.link} href='#'>
                 Home
               </a>{' '}
