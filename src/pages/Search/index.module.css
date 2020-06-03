@@ -17,7 +17,7 @@
   background-color: aqua;
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: flex-start;
   align-content: flex-start;
 }
@@ -68,4 +68,37 @@ main {
 
 .btn-link {
   /* Не знаю с какой целью добавляли,не стал удалять. */
+}
+
+/* Стрелки */
+.sort {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.sorting-up {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 1rem solid black;
+  float: right;
+}
+
+.sorting-down {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid black;
+  float: right;
+}
+
+.no-sorting {
+  width: 0;
+  height: 0;
+  border-top: 0.4rem solid transparent;
+  border-right: 0.8rem solid #74808c;
+  border-bottom: 0.4rem solid transparent;
+  float: right;
 }

@@ -173,18 +173,8 @@ class Search extends Component {
             }
             type='button'
           >
-            Ratings Asc
-          </button>
-          <button
-            onClick={() => this.handleSort('rating', 'desc')}
-            className={
-              this.state.sort === 'ratings'
-                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
-                : `${styles.btn} ${styles['btn-link']}`
-            }
-            type='button'
-          >
-            Ratings Desc
+            Ratings
+            <span className={`${styles.sort} ${styles['sorting-up']}`} />
           </button>
           <button
             onClick={() => this.handleSort('cost', 'asc')}
@@ -195,18 +185,8 @@ class Search extends Component {
             }
             type='button'
           >
-            Average cost for two Asc
-          </button>
-          <button
-            onClick={() => this.handleSort('cost', 'desc')}
-            className={
-              this.state.sort === 'ratings'
-                ? `${styles.active} ${styles.btn} ${styles['btn-link']}`
-                : `${styles.btn} ${styles['btn-link']}`
-            }
-            type='button'
-          >
-            Average cost for two Desc
+            Average cost for two
+            <span className={`${styles.sort} ${styles['sorting-down']}`} />
           </button>
         </div>
         <main>
