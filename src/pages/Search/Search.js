@@ -201,7 +201,7 @@ class Search extends Component {
                 <button
                   data-id={restaurant}
                   onClick={() => this.handleClick(isFavourite, restaurant)}
-                  className={styles.like}
+                  className={styles['add-button']}
                 >
                   {isFavourite ? 'Remove' : 'Add'}
                 </button>

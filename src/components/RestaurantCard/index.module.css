@@ -4,14 +4,71 @@
   /* border-right: 1px solid lightgrey; */
   border-bottom: 1px solid lightgrey;
   background-color: #f5f5f5;
-  padding: 5px;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
 }
 
 .media-body {
-  width: 10000px;
+  width: 100%;
+  display: flex;
 }
 
-.media,
+.res-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
+}
+
+.res-info:first-child {
+  border-right: 2px solid #90caf9;
+}
+
+.res-info__text {
+  font-size: 12px;
+}
+
+.address {
+  font-style: italic;
+}
+
+.average-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.average-info {
+  font-size: 13px;
+}
+
+.res-info__right-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.user-rating__text {
+  font-size: 14px;
+}
+
+.country {
+  width: 100px;
+  height: 30px;
+  border: 1px solid hotpink;
+  border-radius: 4px;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-text {
+  font-size: 14px;
+  color: hotpink
+}
+
+/* .media,
 .media-body {
   overflow: hidden;
   zoom: 1;
@@ -21,24 +78,37 @@
 .media-body {
   display: table-cell;
   vertical-align: top;
-}
+} */
 
 .media-left__image {
-  width: 200px;
+  /* width: 200px; */
+  /* Чтобы у картинки не менялись пропорции, нужно указывать только одну величину, либо ширину, либо высоту. */
   height: 200px;
+  margin-right: 1rem;
 }
 
 .res_name {
-  margin-left: 0.5em;
+  /* margin-left: 0.5em; */
 }
 
 .res_rating {
   border-radius: 4px;
-  margin-left: 0.5em;
+  /* margin-left: 0.5em; */
   font-size: 17px;
   padding: 0.2em;
   color: #fff;
   font-weight: 600;
+}
+
+.rating-wrapper {
+  width: 40px;
+  height: 20px;
+  background-color: red;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
 }
 
 .level-8 {
@@ -73,4 +143,15 @@
 
 .res_review {
   margin-left: 19%;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 20px;
+  margin-right: 0.5rem;
 }

@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar></Navbar>
+        <Navbar />
         <div className={styles.main}>
           <video src='../../assets/video-bg.mp4' autoPlay loop muted></video>
         </div>

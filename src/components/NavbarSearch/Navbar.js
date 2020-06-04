@@ -24,11 +24,15 @@ class Navbar extends Component {
             </button>
           </div>
           <ul className={styles.list}>
-            <li>
-              <a href='#'>Home</a>{' '}
+            <li className={styles['list-item']}>
+              <a className={styles['list-item__link']} href='#'>
+                Home
+              </a>{' '}
             </li>
-            <li>
-              <a href='#'>Favourites</a>{' '}
+            <li className={styles['list-item']}>
+              <a className={styles['list-item__link']} href='#'>
+                Favourites
+              </a>{' '}
             </li>
           </ul>
         </nav>

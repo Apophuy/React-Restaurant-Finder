@@ -31,12 +31,33 @@
   flex-direction: row-reverse;
 }
 
-.like {
+/* .like {
   padding: 6px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
+} */
+
+.add-button {
+  padding: 8px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #5a78c4;
+  color: #ffffff;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.add-button:hover {
+  background-color: #ffffff;
+  border: 1px solid #5a78c4;
+  border-radius: 5px;
+  color: #5a78c4;
 }
 
 main {
